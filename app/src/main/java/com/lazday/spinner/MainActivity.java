@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.image);
 
         api = ApiClient.getClient().create(ApiInterface.class);
-        Retrofit();
+        getData();
     }
 
-    private void Retrofit(){
+    private void getData(){
         Call<List<Flower>> flower = api.getFlower();
         flower.enqueue(new Callback<List<Flower>>() {
             @Override
